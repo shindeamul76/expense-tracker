@@ -113,6 +113,34 @@ const NavStyled = styled.nav`
         border-radius: 0 10px 10px 0;
     }
 }
+
+@media screen and (max-width: 1050px) {
+    width: 20%;
+    padding: 1rem 1rem;
+    .user-con{
+        img{
+            width: 60px;
+            height: 60px;
+            padding: .1rem;
+        }
+    }
+
+    .menu-items{
+        li{
+            font-weight: 300;
+            i{
+                font-size: 1.3rem;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 990px) {
+    display: none;
+}
+
+
 `
 
 export default Navigation

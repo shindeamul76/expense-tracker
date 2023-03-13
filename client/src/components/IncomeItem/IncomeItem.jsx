@@ -82,7 +82,7 @@ const IncomeItem = ({
                     <div className="btn-con">
                         <Button 
                             icon={trash}
-                            bPad={'1rem'}
+                            bPad={'.8rem'}
                             bRad={'50%'}
                             bg={'var(--primary-color'}
                             color={'#fff'}
@@ -160,6 +160,34 @@ color: #222260;
             }
         }
     }
+}
+
+@media screen and (max-width: 1050px) {
+border: 1px solid #FFFFFF;
+padding: .8rem;
+width: 100%;
+
+.icon{
+    width: 40px;
+    height: 40px;
+    border: 1px solid #FFFFFF;
+    i{
+        font-size: 2.4rem;
+    }
+}
+
+.content{
+    h5{
+        font-size: 1.2rem;
+        padding-left: 2rem;
+    }
+    .inner-content{
+        .text{
+            gap: 1.3rem;
+        }
+    }
+}
+
 }
 `;
 

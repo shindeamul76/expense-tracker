@@ -5,6 +5,7 @@ import { InnerLayout } from "../../styles/Layouts";
 import { Rupee } from "../../utils/icons";
 import Form from "../Form/Form";
 import IncomeItem from "../IncomeItem/IncomeItem";
+import Ricontainer from "../Ricontainer/Ricontainer";
 
 const Income = () => {
   const { addIncome, incomes, getIncomes, deleteIncome, totalIncome } = useGlobalContext();
@@ -17,7 +18,13 @@ const Income = () => {
   return (
     <IncomeStyled>
       <InnerLayout>
-        {/* <h1>Incomes</h1> */}
+        <h1>
+          Incomes
+          <span className="ric-con">
+        <Ricontainer />
+        </span>
+          </h1>
+        
         <h2 className="total-income">Total Income: <span>{Rupee} {totalIncome()}</span></h2>
         <div className="income-content">
           <div className="form-container"></div>
@@ -53,6 +60,8 @@ const IncomeStyled = styled.div`
 display: flex;
   overflow: auto;
 
+
+
   .total-income{
     display: flex;
     justify-content: center;
@@ -78,6 +87,24 @@ display: flex;
     .incomes{
         flex: 1;
     }
+}
+
+@media screen and (max-width: 1050px) {
+  .total-income{
+    padding: .9rem;
+    margin: 1rem 0;
+    margin-left: 1rem;
+    font-size: 1.8rem;
+    gap: .5rem;
+    span{
+        font-size: 1.8rem;
+        font-weight: 700;
+    }
+}
+
+}
+
+@media screen and (max-width: 900px){
 }
 `;
 export default Income;

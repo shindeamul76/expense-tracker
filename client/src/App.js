@@ -8,30 +8,31 @@ import Navigation from "./components/Navigation/Navigation";
 import Orb from "./components/Orb/Orb";
 import { MainLayout } from "./styles/Layouts";
 import { useGlobalContext } from './context/globalContext'
+import Ricontainer from "./components/Ricontainer/Ricontainer";
 
 
 
 function App() {
 
-  const [ active, setActive ] = useState(1);
+  // const [ active, setActive ] = useState(1);
 
-  const global = useGlobalContext()
-  console.log(global)
+  const { displayData, active, setActive } = useGlobalContext()
+  // console.log(global)
 
-  const displayData = () => {
-    switch(active) {
-      case 1: 
-       return <Dashboard/>
-      case 2: 
-       return <Dashboard/>
-      case 3: 
-       return <Income/>
-      case 4: 
-       return <Expenses/>
-      default: 
-       return <Dashboard/>
-    }
-  }
+  // const displayData = () => {
+  //   switch(active) {
+  //     case 1: 
+  //      return <Dashboard active={active} setActive={setActive}/>
+  //     case 2: 
+  //      return <Dashboard/>
+  //     case 3: 
+  //      return <Income/>
+  //     case 4: 
+  //      return <Expenses/>
+  //     default: 
+  //      return <Dashboard/>
+  //   }
+  // }
 
   const orbMemo = useMemo(()=> {
     return <Orb/>
@@ -55,6 +56,8 @@ height: 100vh;
 background-color: #dbdbdb;
 position: relative;
 
+
+
 main{
   flex: 1;
   background: rgba(252, 246, 249, 0.78);
@@ -66,5 +69,10 @@ main{
     width: 0;
   }
 }
+
+@media screen and (max-width: 990px) {
+  
+}
+
 `;
 export default App;
