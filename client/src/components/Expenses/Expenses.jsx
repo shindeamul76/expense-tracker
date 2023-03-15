@@ -102,5 +102,28 @@ display: flex;
 }
 
 }
+
+@media screen and (max-width: 500px){
+
+  .total-income{
+    padding: .8rem;
+    margin: 1rem 0;
+    font-size: 1rem;
+    span{
+        font-size: 1rem;
+    }
+}
+  
+  .income-content{
+    flex-direction: column;
+    gap: 2rem;
+}
+}
+
+@media screen and (min-width: 501px) and ( max-width: 989px) {
+  .income-content{
+    flex-direction: column;
+    gap: 2rem;
+}
 `;
 export default Expenses;

@@ -189,6 +189,33 @@ width: 100%;
 }
 
 }
+
+@media screen and (max-width: 500px){
+
+    padding: .6rem;
+    width: 100%;
+
+    .icon{
+        width: 20px;
+        height: 20px;
+        i{
+            font-size: 1.4rem;
+        }
+    }
+    
+    .content{
+        h5{
+            font-size: 1rem;
+            padding-left: 1rem;
+        }
+        .inner-content{
+            .text p:last-child{
+               display: none;
+            }
+        }
+    }
+
+}
 `;
 
 export default IncomeItem

@@ -75,6 +75,12 @@ const ChartStyled = styled.div`
         padding: 1rem;
         border-radius: 20px;
         height: 100%;
+
+        @media screen and (max-width: 500px) {
+          padding: .6rem;
+        }
+
+        
 `;
 
 export default Chart

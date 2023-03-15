@@ -67,6 +67,10 @@ dispaly: none;
     border-radius: 5px;
     box-shadow: 0px 0px 5px rgba(0,0, 0,0.2);
 }
+
+@media screen and (max-width: 500px) {
+  font-size: 1rem;
+}
 `
 
 export default Ricontainer

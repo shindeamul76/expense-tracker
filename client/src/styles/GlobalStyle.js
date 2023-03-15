@@ -85,5 +85,13 @@ export const GlobalStyle = createGlobalStyle`
       
     }
 
+    @media screen and (max-width: 500px) {
+
+        body{
+            font-size: clamp(.8rem, 1vw, .9rem);
+        }
+      
+    }
+
     
 `

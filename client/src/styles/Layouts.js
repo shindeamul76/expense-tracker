@@ -30,4 +30,11 @@ export const InnerLayout = styled.div`
             float: right;
         }
     }
+
+    @media screen and (min-width: 501px) and ( max-width: 989px) {
+        .ric-con {
+            display: block;
+            float: right;
+        }
+      }
 `;

@@ -32,6 +32,10 @@ const OrbStyled = styled.div`
     background: linear-gradient(180deg, #F56692 0%, #F2994A 100%);
         filter: blur(400px);
         animation: ${moveOrb} 15s alternate linear infinite;
+
+        @media screen and (max-width: 500px) {
+         height: 100vh;
+        }
 `;
 
 

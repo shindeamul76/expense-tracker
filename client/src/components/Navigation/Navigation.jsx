@@ -11,9 +11,9 @@ const Navigation = ({active, setActive}) => {
     return (
         <NavStyled>
             <div className="user-con">
-                <img src='{avatar}' alt="" />
+                <img src='https://static.vecteezy.com/system/resources/thumbnails/002/002/403/small/man-with-beard-avatar-character-isolated-icon-free-vector.jpg' alt="" />
                 <div className="text">
-                    <h2>Mike</h2>
+                    <h2>Amul</h2>
                     <p>Your Money</p>
                 </div>
             </div>

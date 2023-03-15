@@ -70,8 +70,10 @@ main{
   }
 }
 
-@media screen and (max-width: 990px) {
-  
+@media screen and (max-width: 500px) {
+  main{
+    height: 100%;
+  }
 }
 
 `;
