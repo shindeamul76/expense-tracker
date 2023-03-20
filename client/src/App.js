@@ -9,7 +9,8 @@ import Orb from "./components/Orb/Orb";
 import { MainLayout } from "./styles/Layouts";
 import { useGlobalContext } from './context/globalContext'
 import Ricontainer from "./components/Ricontainer/Ricontainer";
-
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import Login from "./components/Login/Login";
 
 
 function App() {
@@ -40,13 +41,20 @@ function App() {
 
   return (
     <AppStyled  className="App">
+      <BrowserRouter>
     {orbMemo}
-      <MainLayout>
-     <Navigation active={active} setActive={setActive}/>
-     <main>
-      {displayData()}
-     </main>
-      </MainLayout>
+    <Routes>
+    <Route path="/" element={
+        <MainLayout>
+        <Navigation active={active} setActive={setActive}/>
+        <main>
+         {displayData()}
+        </main>
+         </MainLayout>
+      }/>
+      <Route path="/login" element={<Login/>}/>
+    </Routes>
+      </BrowserRouter>
     </AppStyled>
   );
 }
