@@ -3,11 +3,12 @@ import React, { useState } from 'react'
 import { signout } from '../../utils/icons'
 import { menuItem } from '../../utils/menuItem'
 import styled from 'styled-components'
+import { useGlobalContext } from '../../context/globalContext'
 
 
 const Navigation = ({active, setActive}) => {
 
- 
+ const { userLogout } = useGlobalContext()
     return (
         <NavStyled>
             <div className="user-con">
@@ -30,7 +31,7 @@ const Navigation = ({active, setActive}) => {
                 })}
             </ul>
             <div className="bottom-nav">
-                <li>
+                <li onClick={() => {userLogout()}}>
                     {signout} Sign Out
                 </li>
             </div>

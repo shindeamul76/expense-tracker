@@ -4,6 +4,7 @@ import axios from 'axios';
 import Dashboard from "../components/Dashboard/Dashboard";
 import Income from "../components/Income/Income";
 import Expenses from "../components/Expenses/Expenses";
+import { useNavigation } from "react-router-dom";
 
 
 const BASE_URL = 'http://localhost:5000/api/v1/';
@@ -15,6 +16,8 @@ export const GlobalProvider = ({children}) => {
     const [incomes, setIncomes] = useState([]);
     const [expenses, setExpenses] = useState([]);
     const [error, setError] = useState(null);
+    const [user, setUser] =  useState([])
+    console.log(user)
 
     const [ active, setActive ] = useState(1);
 
@@ -67,6 +70,7 @@ export const GlobalProvider = ({children}) => {
     const getExpenses = async () => {
         try {
            const response = await axios.get(`${BASE_URL}get-expenses`)
+        //    console.log(response)
            setExpenses(response.data.expense)
         //    console.log("This", response.data.income)
         } catch (error) {
@@ -101,6 +105,32 @@ export const GlobalProvider = ({children}) => {
         })
 
         return history.slice(0,3)
+    }
+
+    
+    const userLogin = async (loginData) => {
+        const response = await axios.post(`${BASE_URL}login`, 
+        loginData, 
+        {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        )
+        setUser(response.data.user.expenses)
+           .catch((err) => {
+            setError(err.response.data.message)
+           })
+
+           getExpenses()
+    }
+
+    const userLogout = async () => {
+        const response = await axios.get(`${BASE_URL}logout`)
+        // console.log(response)
+           .catch((err) => {
+            setError(err.response.data.message)
+           })
     }
 
     const displayData = () => {
@@ -139,7 +169,10 @@ export const GlobalProvider = ({children}) => {
             setError,
             displayData,
             active,
-            setActive
+            setActive,
+            userLogin,
+            userLogout,
+            user
             }}>
             {children}
         </GlobalContext.Provider>

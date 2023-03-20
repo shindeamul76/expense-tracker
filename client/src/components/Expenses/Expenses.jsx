@@ -9,7 +9,7 @@ import Ricontainer from "../Ricontainer/Ricontainer";
 import ExpenseForm from "./ExpenseForm";
 
 const Expenses = () => {
-  const { expenses, getExpenses, totalExpense, deleteExpense } = useGlobalContext();
+  const { expenses, getExpenses, totalExpense, deleteExpense, user } = useGlobalContext();
 
   // console.log("This", incomes)
 
