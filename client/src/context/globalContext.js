@@ -7,7 +7,7 @@ import Expenses from "../components/Expenses/Expenses";
 import { useNavigation } from "react-router-dom";
 
 
-const BASE_URL = 'http://localhost:5000/api/v1/';
+const BASE_URL = 'https://backend-expense-tracker.onrender.com/api/v1/';
 
 const GlobalContext = React.createContext()
 

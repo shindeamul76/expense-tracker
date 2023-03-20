@@ -20,6 +20,10 @@ app.use('/api/v1', incomeRouter);
 app.use('/api/v1', expenseRouter);
 app.use('/api/v1', userInfo);
 
+app.get('/', (req, res) => {
+    res.send("Hello World")
+})
+
 // connection of database and server
 const start = async () => {
     try {
