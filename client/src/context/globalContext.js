@@ -6,7 +6,7 @@ import Income from "../components/Income/Income";
 import Expenses from "../components/Expenses/Expenses";
 
 
-const BASE_URL = 'https://backend-expense-tracker.onrender.com/';
+const BASE_URL = 'http://localhost:5000/api/v1/';
 
 const GlobalContext = React.createContext()
 
